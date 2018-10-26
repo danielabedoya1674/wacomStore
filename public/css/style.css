@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Comfortaa", cursive;
+}
+
+* p,
+* li,
+* a,
+* input,
+* textarea {
+  font-size: 13px;
+}
+
+* body {
+  background-color: #f4f5e4;
+}
+
+.container {
+  width: 100%;
+}
+
+.container nav {
+  background-color: #f23c50;
+  padding: 10px;
+}
+
+.container nav .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.container nav .content .division img {
+  height: 22px;
+}
+
+.container nav .content .division ul li {
+  display: inline-block;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+.container nav .content .division input {
+  text-transform: capitalize;
+  padding: 7px;
+  border-radius: 36px;
+  border: 1px solid gray;
+}
+
+.container .productos {
+  margin: auto;
+  width: 60%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.container .productos a {
+  text-decoration: none;
+  color: black;
+}
+
+.container .productos .producto {
+  cursor: pointer;
+  background: #f4f5e4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid #d8dae7;
+  -webkit-box-shadow: 0 0 15 white;
+          box-shadow: 0 0 15 white;
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+}
+
+.container .productos .producto:hover {
+  -webkit-box-shadow: 1px 1px 15px #929292;
+          box-shadow: 1px 1px 15px #929292;
+}
+
+.container .productos .producto img {
+  width: 80%;
+}
+
+.container .productos .producto p {
+  text-align: center;
+}
+
+.container .productos .producto .btns {
+  margin-top: 30px;
+}
+
+.container .productos .producto .btns button {
+  padding: 7px;
+  border: none;
+  background-color: #ff004c;
+  color: white;
+  border-radius: 36px;
+  margin-bottom: 5px;
+  border: 1px solid #ff004c;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  /* &:nth-child(1) {
+                        border: 1px solid rgb(255, 0, 76);
+                        color: rgb(255, 0, 76);
+                        background-color: white;
+                    }*/
+}
+
+.container .productos .producto .btns button:hover {
+  border: 1px solid #ff004c;
+  background-color: white;
+  color: #ff004c;
+}
+
+.container .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.container .description .img img {
+  width: 100%;
+}
+
+.container .description .info {
+  width: 500px;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 15px gray;
+          box-shadow: 1px 1px 15px gray;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .description .info button {
+  cursor: pointer;
+  padding: 7px;
+  border: none;
+  background-color: #f23c50;
+  color: white;
+  border-radius: 36px;
+  margin-bottom: 5px;
+  border: 1px solid #f23c50;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.container .description .info button:hover {
+  border: 1px solid #f23c50;
+  background-color: white;
+  color: #f23c50;
+}
+
+.container #busqueda {
+  margin: 0 auto;
+  width: 65%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container #busqueda .inputs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 7fr 3fr 1fr;
+      grid-template-columns: 7fr 3fr 1fr;
+  grid-gap: 10px;
+  margin: 10px;
+}
+
+.container #busqueda .inputs input, .container #busqueda .inputs select, .container #busqueda .inputs button {
+  padding: 7px;
+}
+
+.container .carrito {
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  background-color: #f23c50;
+  padding: 10px;
+}
+
+.container footer {
+  margin-top: 50px;
+  background-color: #aeb1a0;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px;
+}
+
+.container footer .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container footer .links img {
+  width: 150px;
+}
+
+.container footer .links ul {
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: 30px;
+  border-left: 1px solid black;
+  padding: 30px;
+}
+
+.container footer .links ul a {
+  text-decoration: none;
+}
+
+.container footer .links ul a li {
+  color: black;
+  padding: 5px 0 5px 0;
+}
+
+.container footer .redes {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.container footer .redes img {
+  width: 30px;
+}
+/*# sourceMappingURL=style.css.map */
