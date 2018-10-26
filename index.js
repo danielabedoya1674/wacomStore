@@ -51,22 +51,24 @@ app.get('/productos/:id', (req, res) => {
 });
 
 app.get('/checkout', (req, res) => {
-
+  res.render('checkout');
 });
 
-app.get('/buyedProducts', () => {
-  var items = req.query.ids.split(',');
-  items = items.map((id) => {
-    return new ObjectID(id);
+app.get('/buyedProducts', (req, res) => {
+  console.log(req.query.ids);
+  var arreglo = req.query.ids.split(',');
+  arreglo = arreglo.map(function (id) {
+      return new ObjectID(id);
   });
-
-  db.collection(dbName).find({
-    _id: {
-      $in: items
-    }
-  }).toArray((err, result) => {
-    res.send(result);
-  })
+  db.collection(dbName)
+      .find({
+          _id: {
+              $in: arreglo
+          }
+      })
+      .toArray((err, result) => {
+          res.send(result);
+      });
 });
 
 app.listen(3000, function () {
