@@ -60,10 +60,10 @@ app.get('/buyedProducts', (req, res) => {
   arreglo = arreglo.map(function (id) {
       return new ObjectID(id);
   });
-  db.collection(dbName)
+  db.collection('products')
       .find({
           _id: {
-              $in: arreglo
+              $in: arreglo 
           }
       })
       .toArray((err, result) => {

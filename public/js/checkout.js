@@ -8,6 +8,16 @@ fetch('http://localhost:3000/buyedProducts?ids='+items).then(function(res){
 
     var lista = document.querySelector('#lista');
     res.forEach(function(elem){
-        lista.innerHTML += '<li><img width="100" src="'+elem.img_principal+'">' + elem.marca + '</li>';
+        var header = `
+        <div class="column">
+            <div class="row"><p>`+elem.id+`</p></div>
+            <div class="row"><p>`+elem.name+`</p></div>
+            <div class="row"><p>`+elem.year+`</p></div>
+            <div class="row"><p>`+elem.price+`</p></div>
+        </div>
+        `;
+        
+
+        lista.innerHTML += header;
     });
 });
