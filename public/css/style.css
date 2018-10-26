@@ -9,8 +9,13 @@
 * li,
 * a,
 * input,
-* textarea {
+* textarea, * label {
   font-size: 13px;
+}
+
+* input {
+  margin: 5px 0 5px 0;
+  padding: 5px;
 }
 
 * body {
@@ -210,7 +215,9 @@
   margin: 10px;
 }
 
-.container #busqueda .inputs input, .container #busqueda .inputs select, .container #busqueda .inputs button {
+.container #busqueda .inputs input,
+.container #busqueda .inputs select,
+.container #busqueda .inputs button {
   padding: 7px;
 }
 
@@ -222,7 +229,17 @@
   padding: 10px;
 }
 
-.container #lista {
+.container main {
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  display: -ms-grid;
+  display: grid;
+  margin: 50px auto 0 auto;
+  width: 90%;
+  grid-gap: 10px;
+}
+
+.container main #lista {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -231,13 +248,16 @@
       -ms-flex-direction: column;
           flex-direction: column;
   border: 1px solid #f23c50;
-  border-bottom: none;
-  width: 90%;
-  margin: 50px auto 0 auto;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 15px grey;
+          box-shadow: 1px 1px 15px grey;
+  overflow: hidden;
 }
 
-.container #lista .column {
+.container main #lista .column {
   border-bottom: 1px solid #f23c50;
+  margin: 0 auto 0 auto;
+  width: 99%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,28 +271,47 @@
   text-align: center;
 }
 
-.container #lista .column:nth-child(1) {
+.container main #lista .column:nth-child(1) {
+  width: 100%;
   color: #f23c50;
 }
 
-.container #lista .column .row {
+.container main #lista .column .row {
   padding: 10px;
 }
 
-.container #lista .column .row:nth-child(4) {
-  width: 200px;
+.container main #lista .column .row:nth-child(4) {
+  width: 25%;
 }
 
-.container #lista .column .row:nth-child(3) {
-  width: 200px;
+.container main #lista .column .row:nth-child(3) {
+  width: 25%;
 }
 
-.container #lista .column .row:nth-child(2) {
-  width: 200px;
+.container main #lista .column .row:nth-child(2) {
+  width: 25%;
 }
 
-.container #lista .column .row:nth-child(1) {
-  width: 50px;
+.container main #lista .column .row:nth-child(1) {
+  width: 25%;
+}
+
+.container main #datos {
+  border: 1px solid #f23c50;
+  -webkit-box-shadow: 1px 1px 15px grey;
+          box-shadow: 1px 1px 15px grey;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.container main #datos form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .container footer {

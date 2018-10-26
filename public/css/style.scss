@@ -15,11 +15,15 @@ $azulo: #aeb1a0;
     font-family: $comfortaa;
 
     p,
-    li, 
+    li,
     a,
     input,
-    textarea {
+    textarea,label {
         font-size: 13px;
+    }
+    input{
+        margin: 5px 0 5px 0;
+        padding: 5px;
     }
 
     body {
@@ -179,55 +183,89 @@ $azulo: #aeb1a0;
         margin: 0 auto;
         width: 65%;
         box-sizing: border-box;
+
         .inputs {
             display: grid;
             grid-template-columns: 7fr 3fr 1fr;
             grid-gap: 10px;
             margin: 10px;
-           input,select,button{
-               padding: 7px;
-           }
+
+            input,
+            select,
+            button {
+                padding: 7px;
+            }
         }
     }
 
-    .carrito{
+    .carrito {
         position: fixed;
-        bottom:0px;
+        bottom: 0px;
         right: 0;
         background-color: $rojo;
         padding: 10px;
     }
 
-    #lista{
-        display: flex;
-        flex-direction: column;
-        border: 1px solid #f23c50;
-        border-bottom: none;
-        width: 90%;
+    main {
+        grid-template-columns: 3fr 1fr;
+        display: grid;
         margin: 50px auto 0 auto;
-        .column{
-            border-bottom: 1px solid #f23c50;
-            &:nth-child(1){
-                color: $rojo;
-            }
+        width: 90%;
+        grid-gap: 10px;
+
+        #lista {
             display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            text-align: center;
-            .row{
-                &:nth-child(4){
-                    width: 200px;
+            flex-direction: column;
+            border: 1px solid #f23c50;
+            border-radius: 4px;
+            box-shadow: 1px 1px 15px grey;
+            overflow: hidden;
+            
+            .column {
+                border-bottom: 1px solid #f23c50;
+                margin: 0 auto 0 auto;
+                width: 99%;
+                
+                &:nth-child(1) {
+                    width: 100%;
+                    color: $rojo;
                 }
-                &:nth-child(3){
-                    width: 200px;
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                text-align: center;
+
+                .row {
+                    &:nth-child(4) {
+                        width: 25%;
+                    }
+
+                    &:nth-child(3) {
+                        width: 25%;
+                    }
+
+                    &:nth-child(2) {
+                        width: 25%;
+                    }
+
+                    &:nth-child(1) {
+                        width: 25%;
+                    }
+
+                    padding: 10px;
                 }
-                &:nth-child(2){
-                    width: 200px;
-                }
-                &:nth-child(1){
-                    width: 50px;
-                }
-                padding: 10px;
+            }
+        }
+
+        #datos{
+            border: 1px solid $rojo;
+            box-shadow: 1px 1px 15px grey;
+            padding: 10px;
+            border-radius: 4px;
+            form{
+                display: flex;
+                flex-direction: column;
             }
         }
     }
