@@ -13,6 +13,7 @@ console.log(items.length);
 console.log(typeof(items));
 
 actualizarCarrito();
+var submitBtn = document.getElementById('submit-data');
 
 
 

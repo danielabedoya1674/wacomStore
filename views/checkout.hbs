@@ -14,7 +14,9 @@
         <nav>
             <div class="content">
                 <div class="division">
+                    <a href="/">
                     <img src="../static/img/logo.png" alt="">
+                    </a>
                 </div>
                 <div class="division">
                     <ul>
@@ -44,19 +46,21 @@
             </div>
             <div id="datos">
                 <h1>Datos de envío</h1>
-                <form action="/addData" method="post">
+                <form action="/submit-data" method="post">
                     <label for="">Nombre</label>
                     <input type="text" name="name" required>
-                   <!-- <label for="">Cedula</label>
+                    <label for="">Cedula</label>
                     <input type="text" name="cedula" required>
                     <label for="">Dirección</label>
                     <input type="text" name="direccion" required>
                     <label for="">Medio de pago</label>
                     <div class="medio-pago">
-                        <input type="radio" name="pago" id="" value="efectivo">
-                        <input type="radio" name="pago" id="" value="credito">
-                    </div>-->
-                    <button type="submit">Enviar</button>
+                        <label for="">efectivo</label>
+                        <input type="radio" name="pago" id="" value="efectivo" required>
+                        <label for="">credito</label>
+                        <input type="radio" name="pago" id="" value="credito" required>
+                    </div>
+                    <button id="submit-data" type="submit">Enviar</button>
                 </form>
             </div>
         </main>
@@ -92,6 +96,11 @@
     </div>
     <script src="../static/js/producto.js"></script>
     <script src="../static/js/checkout.js"></script>
+    <script>
+        document.getElementById('submit-data').addEventListener('click',()=>{
+            localStorage.removeItem('items');
+        });
+    </script>
 </body>
 
 </html>

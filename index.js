@@ -6,6 +6,10 @@ var express = require('express'),
 //npm install handlebars
 var app = express();
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 var db;
 
 app.engine('hbs', consolidate.handlebars);
@@ -32,6 +36,7 @@ app.get('/', function (req, res) {
   var prod = db.collection(dbName).find();
 
   prod.toArray((err, result) => {
+    console.log(result);
     res.render('index', {
       productos: result
     })
@@ -72,29 +77,38 @@ app.get('/buyedProducts', (req, res) => {
     });
 });
 
-app.post('/addData', (req, res) => {
+app.post('/submit-data', (req, res) => {
   console.log("Triggered");
-  res.redirect('/test/hola');
-  /* if (req.body.name)
-     var name = req.body.name;
-   if (req.body.cedula)
-     var cedula = req.body.cedula;
-   if (req.body.direccion)
-     var direccion = req.body.direccion;
- 
-   console.log(pago + ":" + name + ":" + cedula + ":" + direccion);
- 
-   res.redirect('/test/' + id);
-   try {
-     db.collection(dbVenta).insertOne({
-       nombre: name,
-       direccion: direccion,
-       cc: cedula,
-       pago: pago
-     });
-   } catch (e) {
-     print(e);
-   }*/
+  console.log(req.body);
+
+  if (req.body.pago)
+    var pago = req.body.pago;
+  else
+    return;
+  if (req.body.name)
+    var name = req.body.name;
+  else
+    return;
+  if (req.body.cedula)
+    var cedula = req.body.cedula;
+  else
+    return;
+  if (req.body.direccion)
+    var direccion = req.body.direccion;
+  else
+    return;
+
+  try {
+    db.collection(dbVenta).insertOne({
+      nombre: name,
+      direccion: direccion,
+      cc: cedula,
+      pago: pago
+    });
+    res.redirect('gracias');
+  } catch (e) {
+    print(e);
+  }
 });
 
 app.get('/test/:id', (req, res) => {

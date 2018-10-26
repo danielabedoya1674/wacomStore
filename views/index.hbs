@@ -16,7 +16,6 @@
                 <div class="division">
                     <img src="../static/img/logo.png" alt="">
                 </div>
-
                 <div class="division">
                     <ul>
                         <li>compañia</li>
@@ -29,7 +28,7 @@
         <div id="busqueda">
             <div class="inputs">
                 <img src="../static/img/search.svg" alt="">
-                <input id="product-name" type="text" placeholder="">
+                <input id="product-name" type="text" placeholder="Buscar...">
                 <select id="sort">
                     <option value="" disabled selected hidden>Filtro</option>
                     <option value="precio">Precio</option>
@@ -39,6 +38,7 @@
                 <button id="search">buscar</button>
             </div>
         </div>
+
         <div class="productos">
             {{#each productos}}
             <a href="/productos/{{_id}}">
