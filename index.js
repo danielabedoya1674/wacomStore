@@ -35,6 +35,10 @@ app.get('/', function (req, res) {
 
   var prod = db.collection(dbName).find();
 
+  if(req.query.name){
+    
+  }
+
   prod.toArray((err, result) => {
     console.log(result);
     res.render('index', {

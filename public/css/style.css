@@ -10,6 +10,7 @@
 * a,
 * input,
 * textarea,
+* button,
 * label {
   font-size: 13px;
 }
@@ -96,7 +97,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 4px;
   border: 1px solid #d8dae7;
   background-color: white;
   -webkit-transition: -webkit-box-shadow .3s;
@@ -125,24 +125,23 @@
 .container .productos .producto .btns button {
   padding: 7px;
   border: none;
-  background-color: #ff004c;
+  background-color: #f23c50;
   color: white;
-  border-radius: 36px;
   margin-bottom: 5px;
-  border: 1px solid #ff004c;
+  border: 1px solid #f23c50;
   -webkit-transition: all .3s;
   transition: all .3s;
   /* &:nth-child(1) {
-                        border: 1px solid rgb(255, 0, 76);
-                        color: rgb(255, 0, 76);
+                        border: 1px solid $rojo;
+                        color: $rojo;
                         background-color: white;
                     }*/
 }
 
 .container .productos .producto .btns button:hover {
-  border: 1px solid #ff004c;
+  border: 1px solid #f23c50;
   background-color: white;
-  color: #ff004c;
+  color: #f23c50;
 }
 
 .container .description {
@@ -164,7 +163,6 @@
 
 .container .description .info {
   width: 500px;
-  border-radius: 4px;
   -webkit-box-shadow: 1px 1px 15px gray;
           box-shadow: 1px 1px 15px gray;
   padding: 20px;
@@ -175,6 +173,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: white;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -186,7 +185,6 @@
   border: none;
   background-color: #f23c50;
   color: white;
-  border-radius: 36px;
   margin-bottom: 5px;
   border: 1px solid #f23c50;
   -webkit-transition: all .3s;
@@ -226,6 +224,8 @@
   left: 20px;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
+  -webkit-filter: opacity(0.2);
+          filter: opacity(0.2);
 }
 
 .container #busqueda .inputs input,
@@ -242,8 +242,7 @@
   -webkit-box-flex: 7;
       -ms-flex-positive: 7;
           flex-grow: 7;
-  border: none;
-  border-bottom: 1px solid #f23c50;
+  border: 1px solid #d8dae7;
   padding-left: 30px;
 }
 
@@ -251,18 +250,28 @@
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
-  border: none;
-  border-bottom: 1px solid #f23c50;
+  border: 1px solid #d8dae7;
 }
 
 .container #busqueda .inputs button {
-  background-color: #f23c50;
-  border-radius: 36px;
-  color: white;
-  border: none;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  cursor: pointer;
+  padding: 7px;
+  border: none;
+  background-color: #f23c50;
+  color: white;
+  margin-bottom: 5px;
+  border: 1px solid #f23c50;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.container #busqueda .inputs button:hover {
+  border: 1px solid #f23c50;
+  background-color: white;
+  color: #f23c50;
 }
 
 .container .carrito {
