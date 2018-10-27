@@ -257,15 +257,15 @@ $azulo: #aeb1a0;
         display: grid;
         margin: 50px auto 0 auto;
         width: 70%;
-        grid-gap: 10px;
+        grid-gap: 20px;
 
         #lista {
             display: flex;
             flex-direction: column;
-            border-radius: 4px;
             box-shadow: 1px 1px 15px grey;
             overflow: hidden;
             background-color: white;
+            padding: 10px;
 
             .column {
                 border-bottom: 1px solid rgb(216, 218, 231);
@@ -310,7 +310,6 @@ $azulo: #aeb1a0;
             box-shadow: 1px 1px 15px grey;
             background-color: white;
             padding: 10px;
-            border-radius: 4px;
 
             form {
                 margin-top: 30px;
@@ -328,17 +327,16 @@ $azulo: #aeb1a0;
                     padding: 7px;
                     border: none;
                     margin-top: 40px;
-                    background-color: rgb(255, 0, 76);
+                    background-color: $rojo;
                     color: white;
-                    border-radius: 36px;
                     margin-bottom: 5px;
-                    border: 1px solid rgb(255, 0, 76);
+                    border: 1px solid $rojo;
                     transition: all .3s;
 
                     &:hover {
-                        border: 1px solid rgb(255, 0, 76);
+                        border: 1px solid $rojo;
                         background-color: white;
-                        color: rgb(255, 0, 76);
+                        color: $rojo;
                     }
                 }
             }

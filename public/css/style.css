@@ -289,7 +289,7 @@
   display: grid;
   margin: 50px auto 0 auto;
   width: 70%;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 .container main #lista {
@@ -300,11 +300,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 4px;
   -webkit-box-shadow: 1px 1px 15px grey;
           box-shadow: 1px 1px 15px grey;
   overflow: hidden;
   background-color: white;
+  padding: 10px;
 }
 
 .container main #lista .column {
@@ -355,7 +355,6 @@
           box-shadow: 1px 1px 15px grey;
   background-color: white;
   padding: 10px;
-  border-radius: 4px;
 }
 
 .container main #datos form {
@@ -380,19 +379,18 @@
   padding: 7px;
   border: none;
   margin-top: 40px;
-  background-color: #ff004c;
+  background-color: #f23c50;
   color: white;
-  border-radius: 36px;
   margin-bottom: 5px;
-  border: 1px solid #ff004c;
+  border: 1px solid #f23c50;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .container main #datos form button:hover {
-  border: 1px solid #ff004c;
+  border: 1px solid #f23c50;
   background-color: white;
-  color: #ff004c;
+  color: #f23c50;
 }
 
 .container footer {

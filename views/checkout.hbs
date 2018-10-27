@@ -15,7 +15,7 @@
             <div class="content">
                 <div class="division">
                     <a href="/">
-                    <img src="../static/img/logo.png" alt="">
+                        <img src="../static/img/logo.png" alt="">
                     </a>
                 </div>
                 <div class="division">
@@ -56,9 +56,9 @@
                     <label for="">Medio de pago</label>
                     <div class="medio-pago">
                         <label for="">efectivo</label>
-                        <input type="radio" name="pago" id="" value="efectivo" required>
+                        <input type="radio" name="pago" value="efectivo" required>
                         <label for="">credito</label>
-                        <input type="radio" name="pago" id="" value="credito" required>
+                        <input type="radio" name="pago" value="credito" required>
                     </div>
                     <button id="submit-data" type="submit">Enviar</button>
                 </form>
@@ -97,8 +97,18 @@
     <script src="../static/js/producto.js"></script>
     <script src="../static/js/checkout.js"></script>
     <script>
-        document.getElementById('submit-data').addEventListener('click',()=>{
-            localStorage.removeItem('items');
+        //Validación para poder subir y cambiar de página a la de agradecimiento!
+        document.getElementById('submit-data').addEventListener('click', () => {
+            var name = document.getElementsByName('name')[0].value;
+            var direccion = document.getElementsByName('direccion')[0].value;
+            var cedula = document.getElementsByName('cedula')[0].value;
+            var pago = document.getElementsByName('pago')[0].checked ||
+                document.getElementsByName('pago')[1].checked;
+            if (name && direccion && cedula && pago) {
+                localStorage.removeItem('items');
+                console.log("deleted");
+            } else
+                console.log("couldn't be deleted");
         });
     </script>
 </body>

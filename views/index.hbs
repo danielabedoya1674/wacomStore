@@ -30,10 +30,10 @@
                 <img src="../static/img/search.svg" alt="">
                 <input id="product-name" type="text" placeholder="Buscar...">
                 <select id="sort">
-                    <option value="" disabled selected hidden>Filtro</option>
-                    <option value="precio">Precio</option>
-                    <option value="nombre">Nombre</option>
-                    <option value="year">Year</option>
+                    <option value="" disabled selected hidden>Precio</option>
+                    <option value="25">hasta $25</option>
+                    <option value="50">$25 a $75</option>
+                    <option value="75">mayor a $75</option>
                 </select>
                 <button id="search">buscar</button>
             </div>
@@ -42,7 +42,7 @@
         <div class="productos">
             {{#each productos}}
             <a href="/productos/{{_id}}">
-                <div class="producto" data-id="{{_id}}">
+                <div class="producto {{#if free}}free{{/if}}" data-id="{{_id}}">
                     <h3>{{name}}</h3>
                     <img src="../static/img/{{name}}.png" alt="">
                     <p>Precio: $ {{price}}</p>
