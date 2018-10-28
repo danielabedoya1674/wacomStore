@@ -84,7 +84,36 @@ $azulo: #aeb1a0;
         a {
             text-decoration: none;
             color: black;
+            position: relative;
+
+            .free::before {
+                position: absolute;
+                content: '';
+                right: 10px;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-top: 25px solid $azul;
+                border-left: 15px solid $azul;
+                border-right: 15px solid $azul;
+                border-bottom: 10px solid transparent;
+            }
+
+            .free::after {
+                content: '';
+                position: absolute;
+                background-image: url('../img/cargo-truck.svg');
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                background-position: 0px 4px;
+                right: 10px;
+                top: 0;
+                width: 25px;
+                height: 25px;
+            }
         }
+
+
 
         .producto {
             cursor: pointer;
@@ -179,7 +208,7 @@ $azulo: #aeb1a0;
         }
     }
 
-    #busqueda {
+    /*#busqueda {
         width: 60%;
         margin: auto;
 
@@ -191,6 +220,7 @@ $azulo: #aeb1a0;
             box-sizing: border-box;
             background-color: white;
             position: relative;
+            align-items: center;
 
             >img {
                 position: absolute;
@@ -203,6 +233,7 @@ $azulo: #aeb1a0;
             input,
             select,
             button {
+
                 font-size: 13px;
                 display: block;
                 padding: 0;
@@ -210,9 +241,63 @@ $azulo: #aeb1a0;
                 padding: 7px;
             }
 
+            .check {
+                position: relative;
+                padding: 7px;
+                margin: 5px;
+                cursor: pointer;
+                flex-basis: 18px;
+                height: 18px;
+
+                input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                }
+
+                &:hover input~.checkmark {
+                    background-color: #ccc;
+                }
+
+                input:checked~.checkmark {
+                    background-color: $rojo;
+                }
+
+                input:checked~.checkmark:after {
+                    display: block;
+                }
+
+                .checkmark {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-color: #eee;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+
+                    &:after {
+                        left: 50%;
+                        top: 50%;
+                        width: 5px;
+                        height: 10px;
+                        border: solid white;
+                        border-width: 0 3px 3px 0;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                    }
+                }
+            }
+
             input {
                 flex-grow: 7;
-                
+
                 border: 1px solid #d8dae7;
                 padding-left: 30px;
             }
@@ -220,9 +305,9 @@ $azulo: #aeb1a0;
             select {
                 flex-grow: 2;
                 border: 1px solid #d8dae7;
-                
+
             }
-            
+
             button {
                 flex-grow: 1;
                 cursor: pointer;
@@ -233,6 +318,108 @@ $azulo: #aeb1a0;
                 margin-bottom: 5px;
                 border: 1px solid $rojo;
                 transition: all .3s;
+
+                &:hover {
+                    border: 1px solid $rojo;
+                    background-color: white;
+                    color: $rojo;
+
+                }
+            }
+        }
+    }*/
+
+    #busqueda {
+        width: 60%;
+        margin: auto;
+
+        .inputs {
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            select {
+                flex-grow:3;
+                padding: 5px;
+                margin: 5px;
+            }
+            #free{
+                flex-grow:1;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                margin: 5px;
+                p{
+                    margin-right: 5px;
+                }
+
+                .check {
+                    position: relative;
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+    
+                    input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+                    }
+    
+                    &:hover input~.checkmark {
+                        background-color: #ccc;
+                    }
+    
+                    input:checked~.checkmark {
+                        background-color: $rojo;
+                    }
+    
+                    input:checked~.checkmark:after {
+                        display: block;
+                    }
+    
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        width: 100%;
+                        background-color: #eee;
+    
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                        }
+    
+                        &:after {
+                            left: 50%;
+                            top: 50%;
+                            width: 5px;
+                            height: 10px;
+                            border: solid white;
+                            border-width: 0 3px 3px 0;
+                            transform: translate(-50%, -50%) rotate(45deg);
+                        }
+                    }
+                }
+            }
+            button {
+                flex-grow: 1;
+                cursor: pointer;
+                padding: 7px;
+                border: none;
+                background-color: $rojo;
+                color: white;
+                border: 1px solid $rojo;
+                transition: all .3s;
+                margin: 5px;
 
                 &:hover {
                     border: 1px solid $rojo;
