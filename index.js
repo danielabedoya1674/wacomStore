@@ -33,14 +33,27 @@ var dbVenta = 'ventas';
 
 app.get('/', function (req, res) {
 
-  var prod = db.collection(dbName).find();
+  var productos = db.collection(dbName).find();
 
-  if(req.query.name){
-    
-  }
+  if (req.query.free)
+    productos.filter({
+      free: true
+    });
 
-  prod.toArray((err, result) => {
-    console.log(result);
+  if (req.query.price)
+    productos.filter({
+      price: {
+        $lt: parseInt(req.query.price)
+      }
+    })
+
+  if (req.query.year)
+    productos.filter({
+      year: parseInt(req.query.year)
+    });
+
+
+  productos.toArray((err, result) => {
     res.render('index', {
       productos: result
     })
@@ -109,11 +122,15 @@ app.post('/submit-data', (req, res) => {
       cc: cedula,
       pago: pago
     });
-    res.redirect('gracias');
+    res.redirect('/checkout/gracias');
   } catch (e) {
     print(e);
   }
 });
+
+app.get('/checkout/gracias',(req,res)=>{
+  res.render('gracias');
+})
 
 app.get('/test/:id', (req, res) => {
   res.send("Muchas gracias por la compra");

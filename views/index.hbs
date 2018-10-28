@@ -20,7 +20,7 @@
                     <ul>
                         <li>compañia</li>
                         <li>productos</li>
-                        <li>contactos</li>
+                        <li><a href="/checkout">checkout</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div id="free">
                     <p>envío gratis</p>
                     <label class="check">
-                        <input type="checkbox">
+                        <input type="checkbox" id="freeship">
                         <span class="checkmark"></span>
                     </label>
                 </div>
@@ -68,6 +68,7 @@
                     <h3>{{name}}</h3>
                     <img src="../static/img/{{name}}.png" alt="">
                     <p>Precio: $ {{price}}</p>
+                    <p>Año: {{year}}</p>
                     <div class="btns">
                         <button class="add">Añadir al carrito</button>
                     </div>
@@ -104,7 +105,7 @@
         </footer>
     </div>
     <script src="../static/js/producto.js"></script>
-    <script src="../static/js/info.js"></script>
+    <script src="../static/js/filtro.js"></script>
 </body>
 
 </html>

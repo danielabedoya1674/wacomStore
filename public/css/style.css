@@ -26,131 +26,41 @@
 
 .container {
   width: 100%;
-  /*#busqueda {
-        width: 60%;
-        margin: auto;
+  position: relative;
+}
 
-        .inputs {
-            padding: 10px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            box-sizing: border-box;
-            background-color: white;
-            position: relative;
-            align-items: center;
+.container .gracias {
+  color: white;
+  width: 60%;
+  margin: auto;
+  background-color: #f23c50;
+  padding: 100px;
+  margin-top: 60px;
+}
 
-            >img {
-                position: absolute;
-                top: 50%;
-                left: 20px;
-                transform: translate(0, -50%);
-                filter: opacity(.2);
-            }
+.container .gracias h1, .container .gracias h4, .container .gracias p {
+  text-align: center;
+}
 
-            input,
-            select,
-            button {
-
-                font-size: 13px;
-                display: block;
-                padding: 0;
-                margin: 5px;
-                padding: 7px;
-            }
-
-            .check {
-                position: relative;
-                padding: 7px;
-                margin: 5px;
-                cursor: pointer;
-                flex-basis: 18px;
-                height: 18px;
-
-                input {
-                    position: absolute;
-                    opacity: 0;
-                    cursor: pointer;
-                    height: 0;
-                    width: 0;
-                }
-
-                &:hover input~.checkmark {
-                    background-color: #ccc;
-                }
-
-                input:checked~.checkmark {
-                    background-color: $rojo;
-                }
-
-                input:checked~.checkmark:after {
-                    display: block;
-                }
-
-                .checkmark {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-color: #eee;
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: none;
-                    }
-
-                    &:after {
-                        left: 50%;
-                        top: 50%;
-                        width: 5px;
-                        height: 10px;
-                        border: solid white;
-                        border-width: 0 3px 3px 0;
-                        transform: translate(-50%, -50%) rotate(45deg);
-                    }
-                }
-            }
-
-            input {
-                flex-grow: 7;
-
-                border: 1px solid #d8dae7;
-                padding-left: 30px;
-            }
-
-            select {
-                flex-grow: 2;
-                border: 1px solid #d8dae7;
-
-            }
-
-            button {
-                flex-grow: 1;
-                cursor: pointer;
-                padding: 7px;
-                border: none;
-                background-color: $rojo;
-                color: white;
-                margin-bottom: 5px;
-                border: 1px solid $rojo;
-                transition: all .3s;
-
-                &:hover {
-                    border: 1px solid $rojo;
-                    background-color: white;
-                    color: $rojo;
-
-                }
-            }
-        }
-    }*/
+.container .gracias img {
+  display: block;
+  padding-top: 40px;
+  width: 120px;
+  margin: auto;
 }
 
 .container nav {
   background-color: #f23c50;
   padding: 10px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+  }
 }
 
 .container nav .content {
@@ -171,14 +81,43 @@
   margin: auto;
 }
 
+@media only screen and (max-width: 700px) {
+  .container nav .content {
+    width: 90%;
+  }
+}
+
 .container nav .content .division img {
   height: 22px;
 }
 
+.container nav .content .division ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .container nav .content .division ul li {
-  display: inline-block;
+  list-style-type: none;
   padding: 10px;
   text-transform: capitalize;
+  color: white;
+}
+
+.container nav .content .division ul li a {
+  text-decoration: none;
+}
+
+.container nav .content .division ul li a:visited {
+  color: white;
+}
+
+.container nav .content .division ul li a:hover {
+  color: #aeb1a0;
+}
+
+.container nav .content .division ul li:hover {
+  color: #aeb1a0;
 }
 
 .container nav .content .division input {
@@ -186,6 +125,16 @@
   padding: 7px;
   border-radius: 36px;
   border: 1px solid gray;
+}
+
+.container .carrito {
+  position: fixed;
+  top: 100px;
+  color: white;
+  font-size: 13px;
+  padding: 10px 10px 10px 10px;
+  background-color: #f23c50;
+  left: 0;
 }
 
 .container .productos {
@@ -196,6 +145,14 @@
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container .productos {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    width: 90%;
+  }
 }
 
 .container .productos a {
@@ -304,6 +261,26 @@
   margin-top: 50px;
 }
 
+@media only screen and (max-width: 700px) {
+  .container .description {
+    width: 90%;
+    margin-top: 54px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container .description .img {
+    margin-top: 20px;
+  }
+}
+
 .container .description .img img {
   width: 100%;
 }
@@ -324,6 +301,21 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media only screen and (max-width: 700px) {
+  .container .description .info {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+    width: 90%;
+  }
+  .container .description .info h3,
+  .container .description .info h1,
+  .container .description .info p,
+  .container .description .info button {
+    margin-top: 10px;
+  }
 }
 
 .container .description .info button {
@@ -347,6 +339,13 @@
 .container #busqueda {
   width: 60%;
   margin: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .container #busqueda {
+    width: 90%;
+    margin-top: 54px;
+  }
 }
 
 .container #busqueda .inputs {
@@ -373,12 +372,10 @@
           flex-grow: 3;
   padding: 5px;
   margin: 5px;
+  border: 1px solid #e5e6d8;
 }
 
 .container #busqueda .inputs #free {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,6 +390,7 @@
       -ms-flex-pack: center;
           justify-content: center;
   margin: 5px;
+  padding: 5px;
 }
 
 .container #busqueda .inputs #free p {
@@ -473,14 +471,6 @@
   color: #f23c50;
 }
 
-.container .carrito {
-  position: fixed;
-  bottom: 0px;
-  right: 0;
-  background-color: #f23c50;
-  padding: 10px;
-}
-
 .container main {
   -ms-grid-columns: 2fr 1fr;
       grid-template-columns: 2fr 1fr;
@@ -489,6 +479,15 @@
   margin: 50px auto 0 auto;
   width: 70%;
   grid-gap: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    width: 90%;
+    margin-top: 70px;
+  }
 }
 
 .container main #lista {
@@ -647,11 +646,33 @@
 }
 
 .container footer .redes {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+@media only screen and (max-width: 700px) {
+  .container footer .redes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .container footer .redes img {
   width: 30px;
+}
+
+@media only screen and (max-width: 700px) {
+  .container footer .redes img {
+    width: 25px;
+    margin: 5px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -16,14 +16,14 @@
             <div class="content">
                 <div class="division">
                     <a href="/">
-                    <img src="../static/img/logo.png" alt="">
+                        <img src="../static/img/logo.png" alt="">
                     </a>
                 </div>
                 <div class="division">
                     <ul>
                         <li>compañia</li>
                         <li>productos</li>
-                        <li>contactos</li>
+                        <li><a href="/checkout">checkout</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,11 +32,11 @@
             <div class="img">
                 <img src="../static/img/{{name}}.png" alt="">
             </div>
-            <div class="info">
+            <div class="info btns">
                 <h3>{{name}}</h3>
                 <h1>$ {{price}}</h1>
                 <p>{{data}}</p>
-                <button>Añadir al carrito</button>
+                <button class="add">Añadir al carrito</button>
             </div>
         </div>
 
@@ -65,6 +65,7 @@
 
         </footer>
     </div>
+    <script src="../static/js/producto.js"></script>
 </body>
 
 </html>

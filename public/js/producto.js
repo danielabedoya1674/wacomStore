@@ -1,5 +1,5 @@
 function actualizarCarrito (){
-    document.querySelector('.carrito').innerHTML = 'carrito: '+items.length;
+    document.querySelector('.carrito').innerHTML = 'Carrito: '+items.length;
 }
 
 // carrito

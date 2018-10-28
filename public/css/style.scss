@@ -36,11 +36,36 @@ $azulo: #aeb1a0;
 
 .container {
     width: 100%;
+    position: relative;
+    .gracias{
+        color: white;
+        width: 60%;
+        margin: auto;
+        background-color: $rojo;
+        padding: 100px;
+        margin-top: 60px;
+        h1,h4,p{
+            text-align: center;
+        }
+        img{
+            display: block;
+            padding-top:40px;
+            width: 120px;
+            margin:auto;
+        }
+    }
 
     nav {
 
         background-color: $rojo;
         padding: 10px;
+
+        @media only screen and (max-width: 700px) {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 3;
+        }
 
         .content {
             display: flex;
@@ -50,6 +75,10 @@ $azulo: #aeb1a0;
             width: 80%;
             margin: auto;
 
+            @media only screen and (max-width: 700px) {
+                width: 90%;
+            }
+
             .division {
 
                 img {
@@ -57,10 +86,25 @@ $azulo: #aeb1a0;
                 }
 
                 ul {
+                    display: flex;
                     li {
-                        display: inline-block;
+                        list-style-type: none;
                         padding: 10px;
                         text-transform: capitalize;
+                        color: white;
+                        
+                        a{
+                            text-decoration: none;
+                            &:visited{
+                                color: white;
+                            }
+                            &:hover{
+                                color: $azulo;
+                            }
+                        }
+                                &:hover{
+                                    color: $azulo;
+                                }
                     }
                 }
 
@@ -73,13 +117,26 @@ $azulo: #aeb1a0;
             }
         }
     }
-
+    .carrito{
+        position: fixed;
+        top: 100px;
+        color:white;
+        font-size: 13px;
+        padding: 10px 10px 10px 10px;
+        background-color: $rojo;
+        left: 0;
+    }
     .productos {
         margin: 20px auto 0 auto;
         width: 60%;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
+
+        @media only screen and (max-width: 700px) {
+            grid-template-columns: 1fr 1fr;
+            width: 90%;
+        }
 
         a {
             text-decoration: none;
@@ -125,6 +182,7 @@ $azulo: #aeb1a0;
             border: 1px solid rgb(216, 218, 231);
             background-color: white;
             transition: box-shadow .3s;
+
 
 
             &:hover {
@@ -174,7 +232,18 @@ $azulo: #aeb1a0;
         margin: auto;
         margin-top: 50px;
 
+        @media only screen and (max-width: 700px) {
+            width: 90%;
+            margin-top: 54px;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .img {
+            @media only screen and (max-width: 700px) {
+                margin-top: 20px;
+            }
+
             img {
                 width: 100%;
             }
@@ -189,6 +258,18 @@ $azulo: #aeb1a0;
             background-color: white;
             justify-content: space-between;
 
+            @media only screen and (max-width: 700px) {
+                order: -1;
+                width: 90%;
+
+                h3,
+                h1,
+                p,
+                button {
+                    margin-top: 10px;
+                }
+            }
+
             button {
                 cursor: pointer;
                 padding: 7px;
@@ -208,131 +289,16 @@ $azulo: #aeb1a0;
         }
     }
 
-    /*#busqueda {
-        width: 60%;
-        margin: auto;
-
-        .inputs {
-            padding: 10px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            box-sizing: border-box;
-            background-color: white;
-            position: relative;
-            align-items: center;
-
-            >img {
-                position: absolute;
-                top: 50%;
-                left: 20px;
-                transform: translate(0, -50%);
-                filter: opacity(.2);
-            }
-
-            input,
-            select,
-            button {
-
-                font-size: 13px;
-                display: block;
-                padding: 0;
-                margin: 5px;
-                padding: 7px;
-            }
-
-            .check {
-                position: relative;
-                padding: 7px;
-                margin: 5px;
-                cursor: pointer;
-                flex-basis: 18px;
-                height: 18px;
-
-                input {
-                    position: absolute;
-                    opacity: 0;
-                    cursor: pointer;
-                    height: 0;
-                    width: 0;
-                }
-
-                &:hover input~.checkmark {
-                    background-color: #ccc;
-                }
-
-                input:checked~.checkmark {
-                    background-color: $rojo;
-                }
-
-                input:checked~.checkmark:after {
-                    display: block;
-                }
-
-                .checkmark {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-                    width: 100%;
-                    background-color: #eee;
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: none;
-                    }
-
-                    &:after {
-                        left: 50%;
-                        top: 50%;
-                        width: 5px;
-                        height: 10px;
-                        border: solid white;
-                        border-width: 0 3px 3px 0;
-                        transform: translate(-50%, -50%) rotate(45deg);
-                    }
-                }
-            }
-
-            input {
-                flex-grow: 7;
-
-                border: 1px solid #d8dae7;
-                padding-left: 30px;
-            }
-
-            select {
-                flex-grow: 2;
-                border: 1px solid #d8dae7;
-
-            }
-
-            button {
-                flex-grow: 1;
-                cursor: pointer;
-                padding: 7px;
-                border: none;
-                background-color: $rojo;
-                color: white;
-                margin-bottom: 5px;
-                border: 1px solid $rojo;
-                transition: all .3s;
-
-                &:hover {
-                    border: 1px solid $rojo;
-                    background-color: white;
-                    color: $rojo;
-
-                }
-            }
-        }
-    }*/
 
     #busqueda {
         width: 60%;
         margin: auto;
 
+        @media only screen and (max-width: 700px) {
+            width: 90%;
+            margin-top: 54px;
+        }
+
         .inputs {
             box-sizing: border-box;
             padding: 10px;
@@ -343,18 +309,21 @@ $azulo: #aeb1a0;
             align-items: center;
 
             select {
-                flex-grow:3;
+                flex-grow: 3;
                 padding: 5px;
                 margin: 5px;
+                border: 1px solid #e5e6d8;
             }
-            #free{
-                flex-grow:1;
+
+            #free {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
                 margin: 5px;
-                p{
+                padding: 5px;
+
+                p {
                     margin-right: 5px;
                 }
 
@@ -363,7 +332,7 @@ $azulo: #aeb1a0;
                     cursor: pointer;
                     width: 20px;
                     height: 20px;
-    
+
                     input {
                         position: absolute;
                         opacity: 0;
@@ -371,19 +340,19 @@ $azulo: #aeb1a0;
                         height: 0;
                         width: 0;
                     }
-    
+
                     &:hover input~.checkmark {
                         background-color: #ccc;
                     }
-    
+
                     input:checked~.checkmark {
                         background-color: $rojo;
                     }
-    
+
                     input:checked~.checkmark:after {
                         display: block;
                     }
-    
+
                     .checkmark {
                         position: absolute;
                         top: 0;
@@ -391,13 +360,13 @@ $azulo: #aeb1a0;
                         height: 100%;
                         width: 100%;
                         background-color: #eee;
-    
+
                         &:after {
                             content: "";
                             position: absolute;
                             display: none;
                         }
-    
+
                         &:after {
                             left: 50%;
                             top: 50%;
@@ -410,6 +379,7 @@ $azulo: #aeb1a0;
                     }
                 }
             }
+
             button {
                 flex-grow: 1;
                 cursor: pointer;
@@ -431,20 +401,18 @@ $azulo: #aeb1a0;
         }
     }
 
-    .carrito {
-        position: fixed;
-        bottom: 0px;
-        right: 0;
-        background-color: $rojo;
-        padding: 10px;
-    }
-
     main {
         grid-template-columns: 2fr 1fr;
         display: grid;
         margin: 50px auto 0 auto;
         width: 70%;
         grid-gap: 20px;
+
+        @media only screen and (max-width: 700px) {
+            grid-template-columns: 1fr;
+            width: 90%;
+            margin-top: 70px;
+        }
 
         #lista {
             display: flex;
@@ -568,10 +536,21 @@ $azulo: #aeb1a0;
         }
 
         .redes {
-            align-self: flex-end;
+            align-self: flex-start;
+
+            @media only screen and (max-width: 700px) {
+                display: flex;
+                flex-direction: column;
+            }
 
             img {
                 width: 30px;
+
+                @media only screen and (max-width: 700px) {
+                    width: 25px;
+                    margin: 5px;
+                    align-self: center;
+                }
             }
         }
     }
