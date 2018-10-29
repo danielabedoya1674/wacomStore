@@ -1,6 +1,5 @@
-var express = require('express'),
-  consolidate = require('consolidate'),
-  ObjectID = require('mongodb').ObjectID,
+var express = require('express'), 
+  hbs = require('express-handlebars');
   MongoClient = require('mongodb').MongoClient,
   bodyParser = require('body-parser');
 //npm install handlebars
@@ -12,9 +11,8 @@ app.use(bodyParser.urlencoded({
 
 var db;
 
-app.engine('hbs', consolidate.handlebars);
-app.set('views', 'views');
-app.set('view engine', 'hbs');
+app.engine('handlebars', hbs());
+app.set('view engine', 'handlebars');
 
 app.use('/static', express.static('public'));
 
