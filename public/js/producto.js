@@ -23,7 +23,7 @@ document.querySelectorAll('.producto .add').forEach(function(button) {
         e.preventDefault();
         var id = button.parentElement.parentElement.getAttribute('data-id');
 
-        console.log(typeof(id));
+        console.log(items);
         if(items.indexOf(id) >= 0){
             console.log('paila');
             return;
