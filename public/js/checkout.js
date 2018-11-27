@@ -16,8 +16,6 @@ fetch('http://localhost:3000/buyedProducts?ids='+items).then(function(res){
             <div class="row"><p>`+elem.price+`</p></div>
         </div>
         `;
-        
-
         lista.innerHTML += header;
     });
 });
