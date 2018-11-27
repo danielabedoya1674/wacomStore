@@ -14,6 +14,9 @@ fetch('http://localhost:3000/buyedProducts?ids='+items).then(function(res){
             <div class="row"><p>`+elem.name+`</p></div>
             <div class="row"><p>`+elem.year+`</p></div>
             <div class="row"><p>`+elem.price+`</p></div>
+            <div class="row" id="delete">
+            <img src="https://image.flaticon.com/icons/svg/61/61848.svg" alt="" width="20">
+          </div>
         </div>
         `;
         lista.innerHTML += header;

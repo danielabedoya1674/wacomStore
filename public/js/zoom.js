@@ -1,9 +1,9 @@
 
 
  /*zoom para  productos*/
-function magnify(imgID, zoom) {
+function magnify( zoom) {
    var img, glass, w, h, bw;
-   img = document.getElementById(imgID);
+   img = document.getElementsByClassName("img");
 
     /*create magnifier glass:*/
    glass = document.createElement("DIV");
@@ -69,4 +69,4 @@ function magnify(imgID, zoom) {
 
  }
 
- magnify("zoom",200);
+ magnify(200);
